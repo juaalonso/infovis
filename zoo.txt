@@ -1,0 +1,16 @@
+Stream Graph
+Small Multiples
+Horizon Graphs
+Parallel Coordinates
+Flow Maps
+Choropeth Maps
+Cartograms
+Dorling cartogram
+Node-link Diagrams
+Dendogram
+Adjacency Diagrams
+Sunburst layout
+Enclosure Diagrams
+Force-Directed Layout
+Arc Diagrams
+Seriation
