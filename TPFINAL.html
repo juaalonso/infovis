@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+ <h1>RESULTADOS PROVINCIALES SANTA FE </h1> 
+    <div id="vis2"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-d6593c159e6dd3af2a2724063edcdbd8"}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "color", "scale": null}, "row": {"type": "nominal", "field": "Cargo"}, "tooltip": [{"type": "quantitative", "field": "votos"}], "x": {"type": "quantitative", "field": "votos"}, "y": {"type": "ordinal", "field": "Agrupacion", "sort": "-x"}}, "height": 350, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-d6593c159e6dd3af2a2724063edcdbd8": [{"Agrupacion": "JUNTOS POR EL CAMBIO", "Cargo": "DIPUTADOS NACIONALES", "votos": 664917, "color": "#FFD700"}, {"Agrupacion": "JUNTOS POR EL CAMBIO", "Cargo": "SENADORES NACIONALES", "votos": 662344, "color": "#FFD700"}, {"Agrupacion": "FRENTE DE TODOS", "Cargo": "SENADORES NACIONALES", "votos": 494576, "color": "blue"}, {"Agrupacion": "FRENTE DE TODOS", "Cargo": "DIPUTADOS NACIONALES", "votos": 482872, "color": "blue"}, {"Agrupacion": "FRENTE AMPLIO PROGRESISTA", "Cargo": "SENADORES NACIONALES", "votos": 183975, "color": "#EDB015"}, {"Agrupacion": "FRENTE AMPLIO PROGRESISTA", "Cargo": "DIPUTADOS NACIONALES", "votos": 179435, "color": "#EDB015"}, {"Agrupacion": "SOBERANIA POPULAR", "Cargo": "DIPUTADOS NACIONALES", "votos": 53433, "color": "#15EDE1"}, {"Agrupacion": "UNITE", "Cargo": "DIPUTADOS NACIONALES", "votos": 48646, "color": "green"}, {"Agrupacion": "UNITE", "Cargo": "SENADORES NACIONALES", "votos": 46529, "color": "green"}, {"Agrupacion": "SOBERANIA POPULAR", "Cargo": "SENADORES NACIONALES", "votos": 44898, "color": "#15EDE1"}, {"Agrupacion": "PRIMERO SANTA FE", "Cargo": "DIPUTADOS NACIONALES", "votos": 31442, "color": "#A8A8A4"}, {"Agrupacion": "SOMOS FUTURO", "Cargo": "DIPUTADOS NACIONALES", "votos": 30586, "color": "#61BA63"}, {"Agrupacion": "PRIMERO SANTA FE", "Cargo": "SENADORES NACIONALES", "votos": 30179, "color": "#A8A8A4"}, {"Agrupacion": "SOMOS FUTURO", "Cargo": "SENADORES NACIONALES", "votos": 29820, "color": "#61BA63"}, {"Agrupacion": "PODEMOS", "Cargo": "DIPUTADOS NACIONALES", "votos": 29429, "color": "#C744EA"}, {"Agrupacion": "PODEMOS", "Cargo": "SENADORES NACIONALES", "votos": 29412, "color": "#C744EA"}, {"Agrupacion": "FIT", "Cargo": "DIPUTADOS NACIONALES", "votos": 28238, "color": "red"}, {"Agrupacion": "FIT", "Cargo": "SENADORES NACIONALES", "votos": 28069, "color": "red"}, {"Agrupacion": "DEL CAMPO POPULAR", "Cargo": "SENADORES NACIONALES", "votos": 11141, "color": "#A7D7B4"}, {"Agrupacion": "DEL CAMPO POPULAR", "Cargo": "DIPUTADOS NACIONALES", "votos": 11048, "color": "#A7D7B4"}, {"Agrupacion": "PROYECTO JOVEN", "Cargo": "DIPUTADOS NACIONALES", "votos": 6783, "color": "#682C34"}, {"Agrupacion": "PROYECTO JOVEN", "Cargo": "SENADORES NACIONALES", "votos": 6749, "color": "#682C34"}, {"Agrupacion": "MOVIMIENTO AL SOCIALISMO", "Cargo": "DIPUTADOS NACIONALES", "votos": 6322, "color": "#D57373"}, {"Agrupacion": "MOVIMIENTO AL SOCIALISMO", "Cargo": "SENADORES NACIONALES", "votos": 6311, "color": "#D57373"}, {"Agrupacion": "POPULAR", "Cargo": "DIPUTADOS NACIONALES", "votos": 5579, "color": "#7D7854"}, {"Agrupacion": "POPULAR", "Cargo": "SENADORES NACIONALES", "votos": 5501, "color": "#7D7854"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis2');
+      vegaEmbed("#vis2", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script> 
+  
+   <h1>RESULTADOS PROVINCIALES POR CIRCUITO </h1>  
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "header": {"labelColor": "#546837", "labelFontSize": 14, "titleColor": "#1B519A", "titleFontSize": 16}, "title": {"anchor": "middle", "color": "#1B519A", "fontSize": 18}}, "data": {"name": "data-4e00b3fd09b847caac3ef5d6b2138250"}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "Color", "scale": null}, "row": {"type": "nominal", "field": "Cargo"}, "tooltip": [{"type": "quantitative", "field": "Circuitos"}], "x": {"type": "quantitative", "field": "Circuitos"}, "y": {"type": "ordinal", "field": "Partido", "sort": "-x"}}, "height": 150, "title": "Cantidad de Circuitos en que gan\u00f3 cada Partido por cargo", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-4e00b3fd09b847caac3ef5d6b2138250": [{"Cargo": "Diputados", "Partido": "Juntos por el Cambio", "Circuitos": 367, "Color": "#FFD700"}, {"Cargo": "Diputados", "Partido": "Frente de Todos", "Circuitos": 144, "Color": "blue"}, {"Cargo": "Diputados", "Partido": "Frente Amplio", "Circuitos": 8, "Color": "#EDB015"}, {"Cargo": "Diputados", "Partido": "Unite", "Circuitos": 1, "Color": "green"}, {"Cargo": "Senadores", "Partido": "Juntos por el Cambio", "Circuitos": 362, "Color": "#FFD700"}, {"Cargo": "Senadores", "Partido": "Frente de Todos", "Circuitos": 149, "Color": "blue"}, {"Cargo": "Senadores", "Partido": "Frente Amplio", "Circuitos": 8, "Color": "#EDB015"}, {"Cargo": "Senadores", "Partido": "Unite", "Circuitos": 1, "Color": "green"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+  
+ <div class='tableauPlaceholder' id='viz1636153817679' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TP&#47;TPFinal_1_16361537685200&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TPFinal_1_16361537685200&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TP&#47;TPFinal_1_16361537685200&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1636153817679');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1100px';vizElement.style.height='877px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1100px';vizElement.style.height='877px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>  
+ <div class='tableauPlaceholder' id='viz1636153902440' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TP&#47;TPFinal_2_16361538866770&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TPFinal_2_16361538866770&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TP&#47;TPFinal_2_16361538866770&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1636153902440');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+ <div class='tableauPlaceholder' id='viz1636153982193' style='position: relative'><noscript><a href='#'><img alt='Dashboard 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TP&#47;TPFinal_3_16361539698610&#47;Dashboard3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TPFinal_3_16361539698610&#47;Dashboard3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TP&#47;TPFinal_3_16361539698610&#47;Dashboard3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1636153982193');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> 
+</body>
+</html>
